@@ -23,7 +23,7 @@ class ProductTemplate(models.Model):
         res['default_opengraph']['g:id'] = self.id
         res['default_opengraph']['g:description'] = self.description_sale
         res['default_opengraph']['g:image'] = self.env['website'].image_url(self, 'image_1024')
-        res['default_opengraph']['g:image'] = self.list_price
+        res['default_opengraph']['g:price'] = self.list_price
         res['default_opengraph']['g:availability'] = 'in_stock'
         res['default_opengraph']['g:condition'] = 'new'
         return res
