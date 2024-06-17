@@ -20,7 +20,7 @@
         		        <field name="website_meta_title" string="Meta Title"/>
         		        <field name="website_meta_description" string="Meta Description"/>
         		        <field name="website_meta_keywords" string="Meta Keywords" help="Separate every keyword with a comma"/>
-        		        <img t-attr-src="Meta Image"/>
+        		        <!--img t-attr-src="Meta Image" alt=""/-->
         		      </group>
         		    </page>
         		    <page name="website_source" string="Website Source">

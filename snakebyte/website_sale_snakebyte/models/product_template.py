@@ -16,3 +16,14 @@ class ProductTemplate(models.Model):
         self.out_of_stock_message = self._out_of_stock_message if re.sub(re.compile('<.*?>'), '', self._out_of_stock_message).strip() else self.website_id.out_of_stock_msg
 
     out_of_stock_message = fields.Html("Out-of-stock Message", compute=get_out_of_stock_message, store=False)
+
+    def _default_website_meta(self):
+        res = super(ProductTemplate, self)._default_website_meta()
+        res['default_opengraph']['g:title'] = self.name
+        res['default_opengraph']['g:id'] = self.id
+        res['default_opengraph']['g:description'] = self.description_sale
+        res['default_opengraph']['g:image'] = self.env['website'].image_url(self, 'image_1024')
+        res['default_opengraph']['g:image'] = self.list_price
+        res['default_opengraph']['g:availability'] = 'in_stock'
+        res['default_opengraph']['g:condition'] = 'new'
+        return res
