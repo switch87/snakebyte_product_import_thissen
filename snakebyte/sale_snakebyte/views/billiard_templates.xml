@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+
+      <record id="action_billiards" model="ir.actions.act_window">
+	        <field name="name">billiards</field>
+	        <field name="res_model">billiard</field>
+	        <field name="view_mode">tree,kanban,form</field>
+      </record>
+      <menuitem
+              id="menu_billiard"
+              name="Biljart tafels"
+              parent="sale.sale_menu_root"
+              action="action_billiards"
+      />
+  </data>
+</odoo>

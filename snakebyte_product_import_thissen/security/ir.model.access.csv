@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_thissen_product_manager,thissen.product manager,model_thissen_product,,1,1,1,1
+access_thissen_product_variant_manager,thissen.product.variant manager,model_thissen_product_variant,,1,1,1,1
+access_thissen_crawler_manager,thissen.crawler manager,model_thissen_crawler,,1,1,1,1

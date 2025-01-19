@@ -1,0 +1,63 @@
+<odoo>
+    <!-- Search View -->
+    <record id="view_thissen_product_filter" model="ir.ui.view">
+        <field name="name">thissen.product.search</field>
+        <field name="model">thissen.product</field>
+        <field name="arch" type="xml">
+            <search string="Search Thissen Products">
+                <field name="name"/>
+                <field name="status"/>
+                <field name="te_verbeteren_met_ai"/>
+                <group expand="1" string="Group By">
+                    <filter string="Status" domain="[]" context="{'group_by':'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_thissen_product_tree" model="ir.ui.view">
+        <field name="name">thissen.product.tree</field>
+        <field name="model">thissen.product</field>
+        <field name="arch" type="xml">
+            <tree string="Thissen Products">
+                <field name="name"/>
+                <field name="price"/>
+                <field name="status" widget="statusbar"/>
+                <field name="te_verbeteren_met_ai"/>
+                <field name="url"/>
+                <field name="sku"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_thissen_product_form" model="ir.ui.view">
+        <field name="name">thissen.product.form</field>
+        <field name="model">thissen.product</field>
+        <field name="arch" type="xml">
+            <form string="Thissen Product">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="status" widget="statusbar"/>
+                        <field name="te_verbeteren_met_ai"/>
+                        <field name="url"/>
+                        <field name="sku"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_thissen_product" model="ir.actions.act_window">
+        <field name="name">Thissen Products</field>
+        <field name="res_model">thissen.product</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_thissen_product_filter"/>
+        <field name="context">{}</field>
+    </record>
+</odoo>

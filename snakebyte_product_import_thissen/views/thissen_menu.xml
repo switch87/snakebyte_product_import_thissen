@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_thissen_root" name="Thissen Products" sequence="10" groups="group_thissen_manager"/>
+    <menuitem id="menu_thissen_product" name="Products" parent="menu_thissen_root" action="action_thissen_product" sequence="10" groups="group_thissen_manager"/>
+    <menuitem id="menu_thissen_start_crawl" name="Start Crawl" parent="menu_thissen_root" action="action_thissen_crawl" sequence="20" groups="group_thissen_manager"/>
+    <menuitem id="menu_thissen_detailed_crawl"
+              name="Start Detailed Crawl"
+              parent="menu_thissen_root"
+              action="action_start_detailed_crawl" groups="group_thissen_manager"
+              sequence="21"/>
+</odoo>
