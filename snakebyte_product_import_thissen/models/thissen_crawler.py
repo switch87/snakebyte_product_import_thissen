@@ -14,3 +14,9 @@ class ThissenCrawlerModel(models.TransientModel):
     def crawl_overview_pages(self):
         crawler = ThissenCrawler(self.env)
         crawler.crawl_overview_pages()
+
+    @api.model
+    def crawl_detailed_pages_for_product(self, product):
+        """Crawl a single product for details."""
+        crawler = ThissenCrawler(self.env)
+        crawler.get_product_details(product)
